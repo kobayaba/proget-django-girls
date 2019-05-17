@@ -26,6 +26,7 @@ SECRET_KEY = '+n4i8c-_)ku^s^c60ls30^4k4q4j_mwyro3x(zrhsi8ben)+gv'
 DEBUG = False
 
 ALLOWED_HOSTS = ['historimos.pythonanywhere.com']
+#'historimos.pythonanywhere.com'
 
 
 # Application definition
