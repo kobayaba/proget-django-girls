@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+n4i8c-_)ku^s^c60ls30^4k4q4j_mwyro3x(zrhsi8ben)+gv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['historimos.pythonanywhere.com']
 
 
 # Application definition
