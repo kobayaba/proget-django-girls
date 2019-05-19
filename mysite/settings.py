@@ -24,10 +24,10 @@ SECRET_KEY = '+n4i8c-_)ku^s^c60ls30^4k4q4j_mwyro3x(zrhsi8ben)+gv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False
-DEBUG = True
 
-#ALLOWED_HOSTS = ['historimos.pythonanywhere.com']
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['historimos.pythonanywhere.com','127.0.0.1']
+
 
 
 
@@ -126,3 +126,9 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 
 LOGIN_REDIRECT_URL = '/'
+
+#config de l'environnement
+if os.environ.get('ENV')=='PRODUCTION':
+    DEBUG=False
+else:
+    DEBUG=True
