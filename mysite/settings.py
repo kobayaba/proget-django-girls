@@ -23,10 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+n4i8c-_)ku^s^c60ls30^4k4q4j_mwyro3x(zrhsi8ben)+gv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['historimos.pythonanywhere.com']
-#'historimos.pythonanywhere.com'
+#ALLOWED_HOSTS = ['historimos.pythonanywhere.com']
+ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -121,3 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
+
+LOGIN_REDIRECT_URL = '/'
