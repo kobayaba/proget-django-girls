@@ -14,6 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
+MEDIA_URL='/media/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,6 +26,10 @@ SECRET_KEY = '+n4i8c-_)ku^s^c60ls30^4k4q4j_mwyro3x(zrhsi8ben)+gv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False
+if os.environ.get('ENV')=='PRODUCTION':
+    DEBUG=False
+else:
+    DEBUG=True
 
 
 ALLOWED_HOSTS = ['historimos.pythonanywhere.com','127.0.0.1']
@@ -40,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +84,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangogirls',
+        'USER':'djangogirls_user',
+        'PASSWORD':'',
+        'HOST':'localhost',
+        'PORT':'',
+    }
+}"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -127,8 +144,3 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 LOGIN_REDIRECT_URL = '/'
 
-#config de l'environnement
-if os.environ.get('ENV')=='PRODUCTION':
-    DEBUG=False
-else:
-    DEBUG=True
